@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isFibonacci(num) {
+            let a = 0;
+            let b = 1;
+    
+            // Se o número for 0 ou 1, já faz parte da sequência
+            if (num === 0 || num === 1) {
+                return true;
+            }
+    
+            // Calcula os valores da sequência até o número informado
+            while (b < num) {
+                const temp = b;
+                b = a + b;
+                a = temp;
+            }
+    
+            // Verifica se o número informado é um dos valores calculados
+            return b === num;
+        }
+    
+        // Solicita ao usuário um número
+        const num = parseInt(prompt("Informe um número para verificar se ele pertence à sequência de Fibonacci:"), 10);
+    
+        // Verifica se o número pertence à sequência de Fibonacci
+        if (isFibonacci(num)) {
+            alert(`O número ${num} pertence à sequência de Fibonacci!`);
+        } else {
+            alert(`O número ${num} não pertence à sequência de Fibonacci.`);
+        }
+      </script>
+</body>
+
+</html>
